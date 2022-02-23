@@ -4,6 +4,7 @@ import ComponentWithRefInstanceVariable from './components/ComponentWithRefInsta
 import ComponentWithDomApi from './components/ComponentWithDomApi';
 import ComponentWithRefRead from './components/ComponentWithRefRead';
 import ComponentWithRefReadWrite from './components/ComponentWithRefReadWrite';
+import ComponentWithImperativeRefState from './components/ComponentWithImperativeRefStat';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <ComponentWithRefInstanceVariable /> */}
       {/* <ComponentWithDomApi label="Label" value="Value" isFocus /> */}
       {/* <ComponentWithRefRead /> */}
-      <ComponentWithRefReadWrite />
+      {/* <ComponentWithRefReadWrite /> */}
+      <ComponentWithImperativeRefState />
     </div>
   );
 }

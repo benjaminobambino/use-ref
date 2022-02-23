@@ -7,7 +7,7 @@ export default function ComponentWithRefRead() {
     setText(event.target.value);
   }
 
-  // useRef version with useEffect -->
+  // // useRef version with useEffect -->
   // const ref = useRef();
 
   // useEffect(() => {
@@ -26,7 +26,7 @@ export default function ComponentWithRefRead() {
     document.title = `Width: ${width}`;
   }
 
-  // ref version with useCallback -->
+  // // ref version with useCallback -->
   // const ref = useCallback((node) => {
   //   if (!node) return;
 

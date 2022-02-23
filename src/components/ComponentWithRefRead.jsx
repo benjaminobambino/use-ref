@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 export default function ComponentWithRefRead() {
   const [text, setText] = useState('Some text ...');
@@ -7,15 +7,36 @@ export default function ComponentWithRefRead() {
     setText(event.target.value);
   }
 
-  const ref = useRef();
+  // useRef version with useEffect -->
+  // const ref = useRef();
 
-  useEffect(() => {
-    const { width } = ref.current.getBoundingClientRect();
+  // useEffect(() => {
+  //   const { width } = ref.current.getBoundingClientRect();
+
+  //   document.title = `Width: ${width}`;
+  // }, [text]);
+
+  // callback ref version -->
+  const ref = (node) => {
+    if (!node) return;
+
+    const { width } = node.getBoundingClientRect();
+    console.log(node)
 
     document.title = `Width: ${width}`;
-  }, [text]);
+  }
 
-  console.log(ref.current)
+  // ref version with useCallback -->
+  // const ref = useCallback((node) => {
+  //   if (!node) return;
+
+  //   const { width } = node.getBoundingClientRect();
+  // //   console.log(node)
+
+  //   document.title = `Width: ${width}`;
+
+  // }, [text])
+
 
   return (
     <div>
